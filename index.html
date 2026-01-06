@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>品牌部 Vol.2：嘉義自駕導航手冊</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #fdfbf7; }
+        .day-card { display: none; }
+        .day-card.active { display: block; animation: slideUp 0.4s ease-out; }
+        @keyframes slideUp { from { transform: translateY(15px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .nav-btn { background: #4a5d4e; color: white; padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; display: inline-flex; align-items: center; }
+        .weather-box { background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); border: 1px solid #7dd3fc; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-[#4a5d4e] text-white py-10 text-center shadow-md">
+        [span_0](start_span)<h1 class="text-2xl font-bold tracking-widest mb-1">嘉義自駕導航預報[span_0](end_span)</h1>
+        <p class="text-sm opacity-80">2026.01.10 - 01.12 | [span_1](start_span)品牌部特刊 Vol.2[span_1](end_span)</p>
+    </header>
+
+    <section class="max-w-md mx-auto -mt-6 px-4">
+        <div class="weather-box p-5 rounded-2xl shadow-lg">
+            <div class="flex justify-between items-center mb-3">
+                <h3 class="font-bold text-sky-900"><i class="fa-solid fa-cloud-sun-rain mr-2"></i>當地氣象預報</h3>
+                <span class="text-xs text-sky-600 font-medium">預報地點：台中/南投/嘉義</span>
+            </div>
+            <div class="grid grid-cols-3 gap-2 text-center">
+                <div class="bg-white/40 p-2 rounded-lg">
+                    <p class="text-[10px] text-sky-800 font-bold">1/10 (六)</p>
+                    <i class="fa-solid fa-sun text-orange-400 my-1"></i>
+                    <p class="text-xs font-bold">14°-21°C</p>
+                </div>
+                <div class="bg-white/40 p-2 rounded-lg">
+                    <p class="text-[10px] text-sky-800 font-bold">1/11 (日)</p>
+                    <i class="fa-solid fa-cloud-sun text-sky-500 my-1"></i>
+                    <p class="text-xs font-bold">13°-23°C</p>
+                </div>
+                <div class="bg-white/40 p-2 rounded-lg border-2 border-sky-400/50">
+                    <p class="text-[10px] text-sky-800 font-bold">1/12 (一)</p>
+                    <i class="fa-solid fa-sun text-orange-400 my-1"></i>
+                    <p class="text-xs font-bold">13°-24°C</p>
+                </div>
+            </div>
+            <p class="text-[10px] text-sky-700 mt-3 italic"><i class="fa-solid fa-circle-info mr-1"></i>提示：一月日夜溫差大，建議採洋蔥式穿法，進入南投山區氣溫約降2-3度。</p>
+        </div>
+    </section>
+
+    <nav class="flex justify-center space-x-2 my-6">
+        <button onclick="showDay(1)" id="btn-1" class="tab-btn px-6 py-2 rounded-full font-bold bg-[#4a5d4e] text-white">Day 1</button>
+        <button onclick="showDay(2)" id="btn-2" class="tab-btn px-6 py-2 rounded-full font-bold bg-white border border-gray-300">Day 2</button>
+        <button onclick="showDay(3)" id="btn-3" class="tab-btn px-6 py-2 rounded-full font-bold bg-white border border-gray-300">Day 3</button>
+    </nav>
+
+    <main class="max-w-md mx-auto px-4 pb-24">
+        
+        <div id="day-1" class="day-card active space-y-4">
+            <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-orange-400">
+                <div class="flex justify-between items-start">
+                    <div>
+                        [span_2](start_span)<h3 class="font-bold">老井極上燒肉[span_2](end_span)</h3>
+                        [span_3](start_span)<p class="text-xs text-gray-500">11:00 預約 (9人)[span_3](end_span)</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=老井極上燒肉福科店" target="_blank" class="nav-btn">導航</a>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-green-500">
+                <div class="flex justify-between items-start">
+                    <div>
+                        [span_4](start_span)<h3 class="font-bold">半山夢工廠[span_4](end_span)</h3>
+                        [span_5](start_span)<p class="text-xs text-gray-500">南投市工業南六路6號[span_5](end_span)</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=半山夢工廠" target="_blank" class="nav-btn">導航</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="day-2" class="day-card space-y-4">
+            <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-pink-400">
+                <div class="flex justify-between items-start">
+                    <div>
+                        [span_6](start_span)<h3 class="font-bold">HERMIT & Co.[span_6](end_span)</h3>
+                        [span_7](start_span)<p class="text-xs text-pink-600">烤玉米慕斯冰淇淋亮點[span_7](end_span)</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=HERMIT+嘉義" target="_blank" class="nav-btn">導航</a>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-blue-400">
+                <div class="flex justify-between items-start">
+                    <div>
+                        [span_8](start_span)[span_9](start_span)<h3 class="font-bold">清豐濤月 景觀足湯[span_8](end_span)[span_9](end_span)</h3>
+                        [span_10](start_span)<p class="text-xs text-gray-500">養生足湯與夕陽景觀[span_10](end_span)</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=清豐濤月" target="_blank" class="nav-btn">導航</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="day-3" class="day-card space-y-4">
+            <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-red-400">
+                <div class="flex justify-between items-start">
+                    <div>
+                        [span_11](start_span)[span_12](start_span)<h3 class="font-bold">白人牙膏觀光工廠[span_11](end_span)[span_12](end_span)</h3>
+                        [span_13](start_span)<p class="text-xs text-gray-500">送紅豆牛奶冰棒[span_13](end_span)</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=白人牙膏觀光工廠" target="_blank" class="nav-btn">導航</a>
+                </div>
+            </div>
+            <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-green-600">
+                <div class="flex justify-between items-start">
+                    <div>
+                        [span_14](start_span)<h3 class="font-bold">咩咩上樹萌寵樂園[span_14](end_span)</h3>
+                        [span_15](start_span)<p class="text-xs text-gray-500">票價 $199[span_15](end_span)</p>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=咩咩上樹萌寵樂園" target="_blank" class="nav-btn">導航</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function showDay(dayNum) {
+            document.querySelectorAll('.day-card').forEach(card => card.classList.remove('active'));
+            document.getElementById('day-' + dayNum).classList.add('active');
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn px-6 py-2 rounded-full font-bold bg-white border border-gray-300 text-gray-600";
+            });
+            document.getElementById('btn-' + dayNum).className = "tab-btn px-6 py-2 rounded-full font-bold bg-[#4a5d4e] text-white shadow-md";
+        }
+    </script>
+</body>
+</html>
